@@ -10,7 +10,7 @@
 
 ### Quick Links
 - **Press Release:** [Press Release] <INSERT LATER> 
-- **Data:** [OneDrive Data Folder](<https://outlook.office365.com/host/377c982d-9686-450e-9a7c-22aeaf1bc162/7211f19f-262a-42eb-a02e-289956491741>)
+- **Data:** [OneDrive Data Folder](<https://myuva-my.sharepoint.com/:f:/r/personal/csg7su_virginia_edu/Documents/DS4320-Project1-Data?csf=1&web=1&e=9I78y4>)
 - **Pipeline:** [Analysis Pipeline](<INSERT LATER>)
 
 ---
