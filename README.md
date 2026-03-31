@@ -158,3 +158,79 @@ To address these identified biases and ensure a robust risk model, we implement 
 - **Inclusion of "Remaining" Credits:** I chose to keep the `Remaining Credits` column despite high variance. This value represents the "Buffer Pool" of a project—a key indicator of a project's long-term financial and environmental stability.
 - **Uncertainty Sources:** Primary uncertainties include: (1) Subjectivity in how "Benefit" is measured across different registries, (2) Economic drift in carbon prices influencing retirement rates, and (3) The "Black Box" nature of private-sector credit retirements that may not be updated in real-time. These are acknowledged as inherent limitations of observational registry data.
 
+## Metadata
+---
+
+### Schema ER Diagram (Logical Level)
+
+The Entity-Relationship diagram below illustrates the logical structure of the curated **Carbon Integrity** database ($D_1$). It details all 5 tables (**PROJECTS**, **DEVELOPERS**, **LOCATIONS**, **METHODOLOGY**, and **PERFORMANCE**), explicitly mapping their **Primary Keys (PK)**, **Foreign Keys (FK)**, attributes, and data types (string, int, float). 
+
+Carbon Integrity Project ERD
+
+### Data Tables
+
+The following table summarizes the primary CSV files used in the initial data acquisition and normalization process. These files were "shattered" into a 3rd Normal Form (3NF) relational model before being synthesized into the $D_1$ master set for Machine Learning.
+
+| Table Name | Rows | Description | CSV File |
+| :--- | :--- | :--- | :--- |
+| **projects** | 11,245 | Core entity table containing project IDs, names, and initial sectoral classifications. | projects.csv |
+| **developers** | 3,012 | Entity-level data mapping unique project developers to their specific organizational IDs. | developers.csv |
+| **locations** | 11,245 | Geospatial metadata linking each project ID to specific countries and global regions. | locations.csv |
+| **methodology** | 11,245 | Technical metadata regarding the specific Registry and Protocol used for credit verification. | methodology.csv |
+| **performance** | 11,245 | Transactional credit data tracking total metric tonnes of carbon issued and retired. | performance.csv |
+
+---
+
+### Data Dictionary
+
+Complete data dictionary documenting all features across the established Secondary Data Set ($D_1$) used for Machine Learning.
+
+#### Table 1: PROJECTS (Central Fact Table)
+
+| Column | Data Type | Description | Example |
+| :--- | :--- | :--- | :--- |
+| **project_id** | string | Unique identifier for each carbon offset project (Primary Key). | "VCS123" |
+| **developer_id** | int64 | Reference to the entity responsible (Foreign Key → developers.developer_id). | 1042 |
+| **location_id** | int64 | Reference to the geographic site (Foreign Key → locations.location_id). | 505 |
+| **method_id** | int64 | Reference to the verification rules (Foreign Key → methodology.method_id). | 88 |
+| **project_name** | string | The official name of the project as listed in the registry. | "Southern Cardamom REDD+" |
+| **broad_category**| string | Engineered feature binning 60+ specific types into 8 industrial sectors. | "Nature-Based" |
+
+#### Table 2: DEVELOPERS (Dimension)
+
+| Column | Data Type | Description | Example |
+| :--- | :--- | :--- | :--- |
+| **developer_id** | int64 | Unique numerical identifier for the developer (Primary Key). | 1042 |
+| **developer** | string | The specific entity or firm name. | "South Pole" |
+
+#### Table 3: LOCATIONS (Dimension)
+
+| Column | Data Type | Description | Example |
+| :--- | :--- | :--- | :--- |
+| **location_id** | int64 | Unique identifier for a country/region pair (Primary Key). | 505 |
+| **country** | string | The nation where the project site is physically located. | "Cambodia" |
+| **region** | string | The global geographic theater of operation. | "Latin America" |
+
+#### Table 4: METHODOLOGY (Dimension)
+
+| Column | Data Type | Description | Example |
+| :--- | :--- | :--- | :--- |
+| **method_id** | int64 | Unique identifier for a registry/protocol pair (Primary Key). | 88 |
+| **registry** | string | The official body responsible for issuing and verifying credits. | "Verra (VCS)" |
+| **protocol** | string | The specific methodology ruleset used during the audit. | "VM0009" |
+
+#### Table 5: PERFORMANCE (Fact Extension)
+
+| Column | Data Type | Description | Example |
+| :--- | :--- | :--- | :--- |
+| **project_id** | string | Project identifier (Primary Key, Foreign Key → projects.project_id). | "VCS123" |
+| **issued_num** | float64 | Total metric tonnes of $CO_2$ credits created. | 1540200.0 |
+| **retired_num** | float64 | Total metric tonnes of $CO_2$ credits permanently removed. | 850000.0 |
+| **retirement_ratio**| float64 | **Target Variable**: The ratio of retired credits to total issued credits. | 0.55 |
+---
+
+### Quantitative Uncertainty of Numerical Features
+
+* **Measurement Error ($\pm 3\%$):** `issued_num` and `retired_num` are subject to registry reporting lags (Vintage Lag). Data for the most recent 12 months is considered "preliminary" and may be updated as final audits close.
+* **Calculation Stability:** `retirement_ratio` uncertainty increases for projects with `issued_num` < 1,000, as small transactions create high ratio volatility.
+* **Type Transformation:** The conversion from raw strings (e.g., "1,200,500") to `float64` was validated against a random sample to ensure no data loss during the SQL `CAST` operation.
