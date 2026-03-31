@@ -1,0 +1,9 @@
+# Ignore the massive raw file
+berkeley_carbon_raw.csv
+data/berkeley_carbon_raw.csv
+
+# Allow committing the course-required log file
+!code/carbon_acquisition.log
+
+# Ignore OS junk
+.DS_Store
