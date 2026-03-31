@@ -165,7 +165,7 @@ To address these identified biases and ensure a robust risk model, we implement 
 
 The Entity-Relationship diagram below illustrates the logical structure of the curated **Carbon Integrity** database ($D_1$). It details all 5 tables (**PROJECTS**, **DEVELOPERS**, **LOCATIONS**, **METHODOLOGY**, and **PERFORMANCE**), explicitly mapping their **Primary Keys (PK)**, **Foreign Keys (FK)**, attributes, and data types (string, int, float). 
 
-Carbon Integrity Project ERD
+![Carbon Integrity Project ERD](carbon_erd.png)
 
 ### Data Tables
 
