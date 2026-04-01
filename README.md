@@ -5,8 +5,11 @@
 This repository presents a data science-driven solution to the "trust gap" in global carbon offset markets. By deconstructing fragmented voluntary carbon market data into a 3rd Normal Form (3NF) Star Schema, we have synthesized a high-integrity analytical dataset ($D_1$) covering 11,245 projects across 92 countries. Our Random Forest machine learning architecture achieves an 81% accuracy rate in predicting the "Retirement Ratio"—the primary KPI for institutional market trust. This project provides a scalable, automated framework for identifying high-integrity carbon credits, enabling investors to mitigate "greenwashing" risk through rigorous feature importance analysis and historical developer benchmarking.
 
 **Author:** [Oliver Andress]  
+
 **NetID:** [csg7su]  
+
 **DOI:** [![DOI](https://zenodo.org/badge/1194056927.svg)](https://doi.org/10.5281/zenodo.19363184)
+
 **License:** [MIT License](LICENSE)
 
 ### Quick Links
