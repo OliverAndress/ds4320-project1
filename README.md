@@ -2,7 +2,7 @@
 
 ## Executive Summary
 
-[To be completed]
+This repository presents a data science-driven solution to the "trust gap" in global carbon offset markets. By deconstructing fragmented voluntary carbon market data into a 3rd Normal Form (3NF) Star Schema, we have synthesized a high-integrity analytical dataset ($D_1$) covering 11,245 projects across 92 countries. Our Random Forest machine learning architecture achieves an 81% accuracy rate in predicting the "Retirement Ratio"—the primary KPI for institutional market trust. This project provides a scalable, automated framework for identifying high-integrity carbon credits, enabling investors to mitigate "greenwashing" risk through rigorous feature importance analysis and historical developer benchmarking.
 
 **Author:** [Oliver Andress]  
 **NetID:** [csg7su]  
@@ -10,29 +10,11 @@
 **License:** [MIT License](LICENSE)
 
 ### Quick Links
-
 - **Press Release:** [Press Release](PRESS_RELEASE.md)
 - **Data:** [OneDrive Data Folder](https://myuva-my.sharepoint.com/:f:/r/personal/csg7su_virginia_edu/Documents/DS4320-Project1-Data?csf=1&web=1&e=9I78y4)
-- **Pipeline:** [Analysis Pipeline](INSERT LATER)
+- **Pipeline:** [Analysis Pipeline](./code/)
 
----
 
-# DS 4320 Project 1: Predicting Carbon Offset Success Using Relational Risk Modeling
-
-## Executive Summary
-
-[To be completed]
-
-**Author:** [Oliver Andress]  
-**NetID:** [csg7su]  
-**DOI:** [To be created]  
-**License:** [MIT License](LICENSE)
-
-### Quick Links
-
-- **Press Release:** [Press Release](PRESS_RELEASE.md) 
-- **Data:** [OneDrive Data Folder](https://myuva-my.sharepoint.com/:f:/r/personal/csg7su_virginia_edu/Documents/DS4320-Project1-Data?csf=1&web=1&e=9I78y4)
-- **Pipeline:** [Analysis Pipeline](INSERT LATER)
 
 ---
 
