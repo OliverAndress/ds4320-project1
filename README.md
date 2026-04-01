@@ -15,7 +15,7 @@ This repository presents a data science-driven solution to the "trust gap" in gl
 
 ### Quick Links
 - **Press Release:** [Press Release](PRESS_RELEASE.md)
-- **Data:** [OneDrive Data Folder](https://myuva-my.sharepoint.com/:f:/r/personal/csg7su_virginia_edu/Documents/DS4320-Project1-Data?csf=1&web=1&e=9I78y4)
+- **Data:** [OneDrive Data Folder](https://myuva-my.sharepoint.com/:f:/g/personal/csg7su_virginia_edu/IgDlte8tD_NURoYgQZKupAKEAQPywDj8R-ZWAMT_mV6NNV8?e=yZfeaL)
 - **Pipeline:** [Analysis Pipeline](./code/pipeline.ipynb)
 
 
