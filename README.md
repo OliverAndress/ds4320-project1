@@ -11,7 +11,7 @@
 
 ### Quick Links
 
-- **Press Release:** [Press Release]  
+- **Press Release:** [Press Release](PRESS_RELEASE.md)
 - **Data:** [OneDrive Data Folder](https://myuva-my.sharepoint.com/:f:/r/personal/csg7su_virginia_edu/Documents/DS4320-Project1-Data?csf=1&web=1&e=9I78y4)
 - **Pipeline:** [Analysis Pipeline](INSERT LATER)
 
@@ -30,7 +30,7 @@
 
 ### Quick Links
 
-- **Press Release:** [Press Release]  
+- **Press Release:** [Press Release](PRESS_RELEASE.md) 
 - **Data:** [OneDrive Data Folder](https://myuva-my.sharepoint.com/:f:/r/personal/csg7su_virginia_edu/Documents/DS4320-Project1-Data?csf=1&web=1&e=9I78y4)
 - **Pipeline:** [Analysis Pipeline](INSERT LATER)
 
