@@ -6,13 +6,13 @@ This repository presents a data science-driven solution to the "trust gap" in gl
 
 **Author:** [Oliver Andress]  
 **NetID:** [csg7su]  
-**DOI:** [To be created]  
+**DOI:** [![DOI](https://zenodo.org/badge/1194056927.svg)](https://doi.org/10.5281/zenodo.19363184)
 **License:** [MIT License](LICENSE)
 
 ### Quick Links
 - **Press Release:** [Press Release](PRESS_RELEASE.md)
 - **Data:** [OneDrive Data Folder](https://myuva-my.sharepoint.com/:f:/r/personal/csg7su_virginia_edu/Documents/DS4320-Project1-Data?csf=1&web=1&e=9I78y4)
-- **Pipeline:** [Analysis Pipeline](./code/)
+- **Pipeline:** [Analysis Pipeline](./code/pipeline.ipynb)
 
 
 
@@ -37,6 +37,12 @@ Forecasting Global Climate Change is a massive, multifaceted domain. Investigati
 **Motivation Paragraph**
 
 I took a half-semester class this semester on Climate Investing. I learned a lot but the two things that particularly stood out was the impending danger of climate change in all walks of life and the ability for young people to have the ability to make the world a better place while also making money. We also talked a lot about the benefits of Carbon Credits, where corporations or organizations buy carbon credits to offset their emissions. However, many projects fail to protect forests, leading to a term called Greenwashing (where companies outwardly appear to be environmentally friendly when they are not). I want to use what I have learned in my class and through my Data Science Major to try to predict a project's success before capital is committed. This ensures that money is efficiently allocated to the initiatives that will help make the world cleaner, therefore helping reduce the impact of climate change. While initially this was going to be a prediction of whether or not a specific carbon market initiative would be approved, I wanted something that was more morally grey. There will be some companies that appear on the Berkeley data set that appear good from the outside, but after analyzing, will soon be mischievous. 
+
+**Press Release**
+
+**Headline:** UVA Data Scientists Launch ‘Carbon Integrity’ AI to Unmask the ‘Ghost Credits’ Threatening Climate Goals
+
+**Full Press Release:** [Press Release](PRESS_RELEASE.md)
 
 ---
 
@@ -107,7 +113,7 @@ The dataset was ingested as a large-scale flat CSV file (~187 MB). While the raw
 
 | File                       | Description                                                                                                                                                                                                                                      | Location                      |
 | -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------- |
-| **data_acquisition.ipynb** | Complete data acquisition and normalization pipeline. It ingests the raw Berkeley CSV, sanitizes headers, shatters the flat file into a 3NF relational model, creates a unique `developers` entity, and exports to both CSV and Parquet formats. | `code/data_acquisition.ipynb` |
+| **data_acquisition.ipynb** | Complete data acquisition and normalization pipeline. It ingests the raw Berkeley CSV, sanitizes headers, shatters the flat file into a 3NF relational model, creates a unique `developers` entity, and exports to both CSV and Parquet formats. | [data_acquisition.ipynb](code/data_acquisition.ipynb) |
 
 
 ### Bias Identification
